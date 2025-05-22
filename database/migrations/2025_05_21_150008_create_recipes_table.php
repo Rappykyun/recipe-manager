@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->text('description');
 
-            $table->enum('category',['Breakfast', 'Launch' , 'Dinner', 'Dessert', 'Snack']);
+            $table->enum('category',['Breakfast', 'Lunch' , 'Dinner', 'Dessert', 'Snack']);
 
             $table->integer('prep_time')->nullable();
 
