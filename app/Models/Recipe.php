@@ -15,6 +15,7 @@ class Recipe extends Model
         'category',
         'prep_time',
         'is_public',
+        'image_path',
 
     ];
 

@@ -7,11 +7,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Recipe routes
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
     Volt::route('recipes', 'recipes.index')->name('recipes.index');
     Volt::route('recipes/public/{recipe}', 'recipes.public')->name('recipes.public');
 });
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
