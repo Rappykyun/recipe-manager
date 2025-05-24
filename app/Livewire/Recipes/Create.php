@@ -3,6 +3,7 @@
 namespace App\Livewire\Recipes;
 
 use Livewire\Component;
+<<<<<<< HEAD
 use Livewire\WithFileUploads;
 use App\Models\Recipe;
 
@@ -71,6 +72,16 @@ class Create extends Component
     {
 
 
+=======
+
+class Create extends Component
+{
+    public function render()
+
+    {
+
+        
+>>>>>>> f1ab130b3ba0c014929c0b524b2c54be0100b95d
         return view('livewire.recipes.create');
     }
 }
