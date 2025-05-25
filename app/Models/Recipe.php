@@ -16,18 +16,21 @@ class Recipe extends Model
         'prep_time',
         'is_public',
         'image_path',
-
+        'user_id',
     ];
 
     public function user(): BelongsTo
-{
+    {
         return $this->belongsTo(User::class);
-}
+    }
 
-public function ingredients(): HasMany{
-    return $this->hasMany(Ingredient::class);
-}
-public function tags(): BelongsToMany{
-    return $this->belongsToMany(Tag::class);
-}
+    public function ingredients(): HasMany
+    {
+        return $this->hasMany(Ingredient::class);
+    }
+
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
