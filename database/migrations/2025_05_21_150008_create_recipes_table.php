@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
 
-            
-            $table->id('recipe_id');
+            $table->id('recipe_id')->primary();
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
 

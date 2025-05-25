@@ -49,6 +49,12 @@
                         Get Started
                     </a>
                 @endif
+                <div class="mt-6">
+                    <a href="{{ route('public') }}"
+                        class="text-md text-gray-500 hover:underline hover:text-gray-700 hover:cursor-pointer">
+                        Explore Recipes
+                    </a>
+                </div>
             </div>
         </div>
 

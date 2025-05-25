@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Recipe extends Model
 {
+    protected $primaryKey = 'recipe_id';
     protected $fillable = [
         'title',
         'description',
@@ -16,7 +17,6 @@ class Recipe extends Model
         'prep_time',
         'is_public',
         'image_path',
-
     ];
 
     public function user(): BelongsTo
