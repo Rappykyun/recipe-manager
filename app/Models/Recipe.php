@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Recipe extends Model
 {
+    protected $primaryKey = 'recipe_id';
+
     protected $fillable = [
         'title',
         'description',
@@ -16,8 +18,26 @@ class Recipe extends Model
         'prep_time',
         'is_public',
         'image_path',
+        'image_url',
         'user_id',
     ];
+
+    protected $casts = [
+        'is_public' => 'boolean',
+        'prep_time' => 'integer',
+    ];
+
+    // Accessor for backward compatibility with image_url
+    public function getImageUrlAttribute()
+    {
+        return $this->image_path;
+    }
+
+    // Mutator for backward compatibility with image_url
+    public function setImageUrlAttribute($value)
+    {
+        $this->attributes['image_path'] = $value;
+    }
 
     public function user(): BelongsTo
     {
@@ -26,11 +46,11 @@ class Recipe extends Model
 
     public function ingredients(): HasMany
     {
-        return $this->hasMany(Ingredient::class);
+        return $this->hasMany(Ingredient::class, 'recipe_id', 'recipe_id');
     }
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'recipe_tag', 'recipe_id', 'tag_id');
     }
 }
