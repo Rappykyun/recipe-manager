@@ -6,13 +6,13 @@
 </head>
 
 <body class="min-h-screen bg-white">
-    <div class="flex flex-col h-full">
+    <div class="flex flex-col h-full fixed">
         <!-- Logo and App Name -->
         <div class="flex items-center gap-2 p-4">
             <span class="text-lg font-bold text-gray-900">Recipe Manager</span>
         </div>
         <!-- Navigation -->
-        <nav class="bg-gray-50 flex-1 px-2 py-4 mx-2 mt-2 rounded-lg shadow-sm">
+        <nav class="bg-gray-50 flex-1 px-2 py-4 mx-2 mt-2 rounded-lg shadow-sm ">
             <div class="pl-2 mb-3 text-xs font-semibold tracking-wider text-gray-500 uppercase">Main</div>
             <div class="flex flex-col gap-2">
                 <a href="{{ route('dashboard') }}"
@@ -29,7 +29,7 @@
                 </a> --}}
                 <a href="{{ route('recipes.index') }}"
                     class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition
-                          {{ request()->routeIs('recipes.index') ? 'bg-indigo-100 dark:bg-zinc-800 text-indigo-700 dark:text-indigo-300 font-semibold shadow' : 'text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-zinc-800' }}">
+                          {{ request()->routeIs('recipes.index') ? 'bg-indigo-100 text-indigo-700 font-semibold shadow' : 'text-gray-900 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-zinc-800' }}">
                     <x-heroicon-o-book-open class="w-6 h-6" />
                     <span>My Recipes</span>
                 </a>
@@ -46,7 +46,7 @@
             </div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="ml-2 text-xs text-r,phped-500 hover:underline">Log Out</button>
+                <button type="submit" class="ml-2 text-xs text-black hover:underline">Log Out</button>
             </form>
         </div>
     </div>
