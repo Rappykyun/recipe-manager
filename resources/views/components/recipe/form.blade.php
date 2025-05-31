@@ -32,7 +32,7 @@
     </div>
 
     <div>
-        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+        <label for="description" class="block text-sm font-medium text-gray-700">Cooking Instruction/Description</label>
         <textarea wire:model="description" id="description" rows="3"
             class="block w-full px-4 py-3 mt-1 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             placeholder="Describe your recipe..."></textarea>

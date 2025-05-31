@@ -73,7 +73,7 @@ with([
                         class="block w-full px-4 py-2 text-center bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
                         Create New Recipe
                     </a> --}}
-                    <a href="{{ route('recipes.index') }}"
+                    <a href="{{ route('myRecipes') }}"
                         class="block w-full px-4 py-2 text-center bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-200 dark:hover:bg-zinc-600">
                         View All Recipes
                     </a>

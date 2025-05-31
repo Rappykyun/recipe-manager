@@ -14,10 +14,15 @@
                 <x-heroicon-o-home class="w-5 h-5 flex-shrink-0" />
                 <span class="truncate">Dashboard</span>
             </a>
-
-            <a href="{{ route('recipes.index') }}"
+            <a href="{{ route('exploreRecipes') }}"
                 class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition w-full
-                {{ request()->routeIs('recipes.index') || request()->routeIs('recipes.show') ? 'bg-indigo-100 text-indigo-700 font-semibold shadow' : 'text-gray-900 hover:bg-gray-100' }}">
+                {{ request()->routeIs('exploreRecipes') || request()->routeIs('exploreRecipes.show') ? 'bg-indigo-100 text-indigo-700 font-semibold shadow' : 'text-gray-900 hover:bg-gray-100' }}">
+                <x-heroicon-o-magnifying-glass class="w-5 h-5 flex-shrink-0" />
+                <span class="truncate">Explore Recipes</span>
+            </a>
+            <a href="{{ route('myRecipes') }}"
+                class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition w-full
+                {{ request()->routeIs('myRecipes') || request()->routeIs('recipes.show') ? 'bg-indigo-100 text-indigo-700 font-semibold shadow' : 'text-gray-900 hover:bg-gray-100' }}">
                 <x-heroicon-o-book-open class="w-5 h-5 flex-shrink-0" />
                 <span class="truncate">My Recipes</span>
             </a>

@@ -7,8 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Volt::route('recipes/public/{recipe}', ' recipes.show')
-    ->name(' ');
+// Public explore route (no auth required)
+Volt::route('explore', 'recipes.explore')
+    ->name('exploreRecipes');
+
+Volt::route('explore/{recipe}', 'recipes.show')
+    ->name('exploreRecipes.show');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -16,7 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     Volt::route('recipes', 'recipes.myRecipes')
-        ->name('recipes.index');
+        ->name('myRecipes');
 
     Volt::route('recipes/create', 'recipes.create')
         ->name('recipes.create');
@@ -27,8 +31,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Volt::route('recipes/{recipes}/edit', 'recipes.edit')
         ->name('recipes.edit');
 });
-
-
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
