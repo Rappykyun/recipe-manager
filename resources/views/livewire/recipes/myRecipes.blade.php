@@ -207,6 +207,10 @@ $removeTag = function ($index) {
     }
 };
 
+$navigateToRecipe = function ($recipeId) {
+    return redirect()->route('recipes.show', $recipeId);
+};
+
 ?>
 
 <div>
@@ -229,11 +233,11 @@ $removeTag = function ($index) {
 
             <main>
                 <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <!-- Search and Filters -->
+        
                     <x-recipe.search-filters :search="$search" :category="$category" :tag="$tag" :categories="$categories"
                         :tags="$tags" />
 
-                    <!-- Recipes Grid -->
+   
                     <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         @forelse ($recipes as $recipe)
                             <x-recipe.card :recipe="$recipe" />
@@ -242,7 +246,6 @@ $removeTag = function ($index) {
                         @endforelse
                     </div>
 
-                    <!-- Pagination -->
                     @if ($recipes->hasPages())
                         <div class="mt-8">
                             {{ $recipes->links() }}
@@ -253,7 +256,6 @@ $removeTag = function ($index) {
         </div>
     </div>
 
-    <!-- Modal -->
     <x-recipe.form-modal :modalOpen="$modalOpen" :modalMode="$modalMode" :categories="$categories" :selectedTags="$selectedTags"
         :ingredients="$ingredients" />
 </div>

@@ -5,14 +5,14 @@
     @include('partials.head')
 </head>
 
-<body class="min-h-screen bg-white">
-    <div class="flex">
+<body class="min-h-screen bg-gray-50">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 h-screen border-e border-gray-200 bg-gray-50">
+        <aside class="w-64 h-full border-e border-gray-200 bg-gray-50 flex-shrink-0">
             @include('components.layouts.app.sidebar')
         </aside>
         <!-- Main Content -->
-        <main class="flex-1 p-8 bg-white min-h-screen">
+        <main class="flex-1 p-8 bg-white overflow-auto">
             {{ $slot }}
         </main>
     </div>
