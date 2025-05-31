@@ -10,7 +10,7 @@
     <div class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
      
-        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" aria-hidden="true" wire:click="closeModal">
+        <div class="fixed inset-0  transition-opacity" aria-hidden="true" wire:click="closeModal">
         </div>
 
      
